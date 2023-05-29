@@ -104,23 +104,36 @@ function antiRotation(event) {
 
 
 // Fonctionnalité n°9
-btnToPush = document.querySelector('.navbar-brand');
+let btnToPush = document.querySelector('.navbar-brand');
+
+let isOver = false;
+
+btnToPush.addEventListener("mousedown", () => {
+  isOver = true;
+});
+
+btnToPush.addEventListener("mouseup", () => {
+  isOver = false;
+});
+
+
 btnToPush.addEventListener('mousedown', bodyChanges);
+
 
 function bodyChanges() {
   document.addEventListener('keydown', keyChoices);
   function keyChoices(event) {
-    if(event.key ==="a"){
-      document.body.className ='';
-      document.body.classList.add("col-4")
-    } else if(event.key ==="y") {
-      document.body.className ='';
-      document.body.classList.add("offset-md-4", "col-4")
-    } else if(event.key ==="p") {
-      document.body.className ='';
-      document.body.classList.add("offset-md-8")
-    }else if(event.key ==="b") {
-      document.body.className ='';
+    if(isOver) {
+      if(event.key ==="a" || event.key ==="A"){
+        document.body.className ='col-4';
+        console.log('jappuye sur a')
+      } else if(event.key ==="y" || event.key ==="Y") {
+        document.body.className ='offset-md-4 col-4';
+      } else if(event.key ==="p" || event.key ==="P") {
+        document.body.className ='offset-md-8';
+      }else if(event.key ==="b" || event.key ==="B") {
+        document.body.className ='';
+      }
     }
   }
 }
