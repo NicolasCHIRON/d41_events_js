@@ -6,6 +6,7 @@ footerZone.addEventListener('click',clickFooter);
 let nbOfClick = 0
 
 function clickFooter() {
+  console.log("clique")
   nbOfClick++
   console.log(`click numéro ${nbOfClick}`)
 }
