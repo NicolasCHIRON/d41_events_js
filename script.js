@@ -88,12 +88,21 @@ function rotation() {
   let firstCard = cards[0];
   let parentDiv = lastCard.parentNode; // On initialise une variable qui a pour valeur le parent des cartes (la div avec la classe row)
 
-  parentDiv.insertBefore(lastCard, firstCard); // fisrtCard est appelé dans la fonctionnalité n°3
+  parentDiv.insertBefore(lastCard, firstCard); 
 }
 
-
 // Fonctionnalité n°8
+let antiRotateBtn = document.querySelector(".btn-primary");
+console.log(antiRotateBtn)
+antiRotateBtn.addEventListener('click',antiRotation);
 
+function antiRotation(event) {
+  event.preventDefault();
+  let lastCard = cards[Number(cards.length)-1]; // cards est appelé dans la fonctionnalité n°6
+  let firstCard = cards[0];
+  let parentDiv = lastCard.parentNode; // On initialise une variable qui a pour valeur le parent des cartes (la div avec la classe row)
+  lastCard.after(firstCard);
+}
 
 
 // Fonctionnalité n°9
