@@ -1,6 +1,6 @@
 # d39 - event-JS
 
-second steps on JavaScript... (babies grow so fat :o)
+third step on JavaScript... (babies grow so fast :o)
 
 You will find ten exercices to modify a HTML doc with Javascript !
 
