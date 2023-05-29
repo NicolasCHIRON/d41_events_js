@@ -22,7 +22,7 @@ function clickNavbar() {
 }
 
 // Fonctionnalité n°3
-let firstCard = document.getElementsByClassName("card")[0];
+let firstCard = document.getElementsByClassName("col-md-4")[0];
 let btnEditFirstCard = firstCard.getElementsByTagName('button')[1];
 
 btnEditFirstCard.addEventListener('click',redCard);
@@ -32,7 +32,7 @@ function redCard() {
 }
 
 // Fonctionnalité n°4
-let secondCard = document.getElementsByClassName("card")[1];
+let secondCard = document.getElementsByClassName("col-md-4")[1];
 let btnEditSecondCard = secondCard.getElementsByTagName('button')[1];
 
 btnEditSecondCard.addEventListener('click',greenCard);
@@ -52,9 +52,48 @@ navbar.addEventListener('dblclick', deleteCdn);
 linkCdn = document.getElementsByTagName('link')[0]
 
 function deleteCdn() {
-  if(linkCdn.href === "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css") {
-    linkCdn.href = "javascript:void(0)"; // fonctionne très bien si on met href="" également
+  if(document.styleSheets.item(0).disabled == false) {
+    void(document.styleSheets.item(0).disabled = true)
   } else {
-    linkCdn.href = "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+    void(document.styleSheets.item(0).disabled = false)
   }
 }
+
+// Fonctionnalité n°6
+let cards = document.getElementsByClassName("col-md-4");
+
+for (let card = 0; card < cards.length; card++) {
+  let btnEditCard = cards[card].getElementsByTagName("button")[0];
+  let textCard = cards[card].querySelector(".card-text");
+  let imgCard = cards[card].querySelector(".card-img-top")
+
+  btnEditCard.addEventListener('mouseover', reduceCard);
+
+  function reduceCard() {
+    textCard.classList.toggle("collapse");
+      if(imgCard.style.width == false) {
+      imgCard.style.width = '20%';
+    } else if(imgCard.style.width == '20%') {
+      imgCard.style.width = '';
+    }
+  }
+}
+
+// Fonctionnalité n°7
+let rotateBtn = document.querySelector(".btn-secondary");
+rotateBtn.addEventListener('click',rotation);
+
+function rotation() {
+  let lastCard = cards[Number(cards.length)-1]; // cards est appelé dans la fonctionnalité n°6
+  let firstCard = cards[0];
+  let parentDiv = lastCard.parentNode; // On initialise une variable qui a pour valeur le parent des cartes (la div avec la classe row)
+
+  parentDiv.insertBefore(lastCard, firstCard); // fisrtCard est appelé dans la fonctionnalité n°3
+}
+
+
+// Fonctionnalité n°8
+
+
+
+// Fonctionnalité n°9
