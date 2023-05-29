@@ -112,7 +112,7 @@ btnToPush.addEventListener("mousedown", () => {
   isOver = true;
 });
 
-btnToPush.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", () => {
   isOver = false;
 });
 
@@ -135,10 +135,12 @@ function bodyChanges() {
   }
 }
 
+// Fonction identique mais fonctionnant avec un click (moins de soucis)
+
 // let headerBtn = document.querySelector('strong');
 // let clicTarget = false;
 
-// headerBtn.addEventListener('mousedown', function() {
+// headerBtn.addEventListener('click', function() {
 //   clicTarget = true;
 // });
 
