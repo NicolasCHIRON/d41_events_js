@@ -116,9 +116,7 @@ btnToPush.addEventListener("mouseup", () => {
   isOver = false;
 });
 
-
 btnToPush.addEventListener('mousedown', bodyChanges);
-
 
 function bodyChanges() {
   document.addEventListener('keydown', keyChoices);
@@ -126,7 +124,6 @@ function bodyChanges() {
     if(isOver) {
       if(event.key ==="a" || event.key ==="A"){
         document.body.className ='col-4';
-        console.log('jappuye sur a')
       } else if(event.key ==="y" || event.key ==="Y") {
         document.body.className ='offset-md-4 col-4';
       } else if(event.key ==="p" || event.key ==="P") {
