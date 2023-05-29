@@ -109,7 +109,6 @@ btnToPush.addEventListener('mousedown', bodyChanges);
 
 function bodyChanges() {
   document.addEventListener('keydown', keyChoices);
-  console.log('blablabla')
   function keyChoices(event) {
     if(event.key ==="a"){
       document.body.className ='';
