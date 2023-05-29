@@ -134,3 +134,16 @@ function bodyChanges() {
     }
   }
 }
+
+// let headerBtn = document.querySelector('strong');
+// let clicTarget = false;
+
+// headerBtn.addEventListener('mousedown', function() {
+//   clicTarget = true;
+// });
+
+// document.addEventListener('click', function(event) {
+//   if (event.target !== headerBtn) {
+//     clicTarget = false;
+//   }
+// });
