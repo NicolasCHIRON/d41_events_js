@@ -93,16 +93,35 @@ function rotation() {
 
 // Fonctionnalité n°8
 let antiRotateBtn = document.querySelector(".btn-primary");
-console.log(antiRotateBtn)
 antiRotateBtn.addEventListener('click',antiRotation);
 
 function antiRotation(event) {
   event.preventDefault();
   let lastCard = cards[Number(cards.length)-1]; // cards est appelé dans la fonctionnalité n°6
   let firstCard = cards[0];
-  let parentDiv = lastCard.parentNode; // On initialise une variable qui a pour valeur le parent des cartes (la div avec la classe row)
   lastCard.after(firstCard);
 }
 
 
 // Fonctionnalité n°9
+btnToPush = document.querySelector('.navbar-brand');
+btnToPush.addEventListener('mousedown', bodyChanges);
+
+function bodyChanges() {
+  document.addEventListener('keydown', keyChoices);
+  console.log('blablabla')
+  function keyChoices(event) {
+    if(event.key ==="a"){
+      document.body.className ='';
+      document.body.classList.add("col-4")
+    } else if(event.key ==="y") {
+      document.body.className ='';
+      document.body.classList.add("offset-md-4", "col-4")
+    } else if(event.key ==="p") {
+      document.body.className ='';
+      document.body.classList.add("offset-md-8")
+    }else if(event.key ==="b") {
+      document.body.className ='';
+    }
+  }
+}
